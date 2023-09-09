@@ -16,7 +16,7 @@ import med.voll.api.dtos.DadosMedico;
 import med.voll.api.dtos.Especialidade;
 
 @Table(name="medicos")
-@Entity
+@Entity(name="Medico")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,7 +31,7 @@ public class Medico {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String crm;
