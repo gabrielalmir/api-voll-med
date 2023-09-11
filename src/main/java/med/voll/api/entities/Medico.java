@@ -12,7 +12,8 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.voll.api.dtos.DadosMedico;
+import med.voll.api.dtos.DadosAtualizaMedico;
+import med.voll.api.dtos.DadosCadastroMedico;
 import med.voll.api.dtos.Especialidade;
 
 @Table(name="medicos")
@@ -22,13 +23,25 @@ import med.voll.api.dtos.Especialidade;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Medico {
-    public Medico(DadosMedico medico) {
+    public Medico(DadosCadastroMedico medico) {
         this.nome = medico.nome();
         this.email = medico.email();
         this.telefone = medico.telefone();
         this.crm = medico.crm();
         this.especialidade = medico.especialidade();
         this.endereco = new Endereco(medico.endereco());
+    }
+
+    public void atualizarInformacoes(DadosAtualizaMedico medico) {
+        if (medico.nome() != null) {
+            this.nome = medico.nome();
+        }
+        if (medico.telefone() != null) {
+            this.telefone = medico.telefone();
+        }
+        if (medico.endereco() != null) {
+            this.endereco.atualizaInformacoes(medico.endereco());
+        }
     }
 
     @Id
