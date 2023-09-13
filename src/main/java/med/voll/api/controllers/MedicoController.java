@@ -1,8 +1,8 @@
 package med.voll.api.controllers;
 
 import jakarta.validation.Valid;
-import med.voll.api.dtos.DadosAtualizaMedico;
-import med.voll.api.dtos.DadosListagemMedicos;
+import med.voll.api.domain.medico.dtos.DadosAtualizaMedico;
+import med.voll.api.domain.medico.dtos.DadosListagemMedicos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -10,9 +10,9 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import med.voll.api.dtos.DadosCadastroMedico;
-import med.voll.api.entities.Medico;
-import med.voll.api.repositories.MedicoRepository;
+import med.voll.api.domain.medico.dtos.DadosCadastroMedico;
+import med.voll.api.domain.medico.Medico;
+import med.voll.api.domain.medico.repositories.MedicoRepository;
 
 @RestController
 @RequestMapping("medicos")

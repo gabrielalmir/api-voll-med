@@ -1,11 +1,9 @@
-package med.voll.api.repositories;
+package med.voll.api.domain.medico.repositories;
 
-import io.micrometer.core.instrument.binder.db.MetricsDSLContext;
+import med.voll.api.domain.medico.Medico;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import med.voll.api.entities.Medico;
 
 public interface MedicoRepository extends JpaRepository<Medico, Long> {
 
